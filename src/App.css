@@ -14,7 +14,7 @@
   );
 }
 
-/* Animated gradient orb behind text */
+/* Animated gradient orb behind content */
 .glow-orb {
   position: absolute;
   width: 500px;
@@ -40,7 +40,75 @@
   }
 }
 
-/* Hero text */
+/* ---- Landing page ---- */
+
+.landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.landing-title {
+  font-size: clamp(3rem, 10vw, 6rem);
+  font-weight: 200;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.landing-sub {
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 3px;
+  margin-bottom: 32px;
+}
+
+.reveal-btn {
+  background: linear-gradient(
+    135deg,
+    var(--color-gold),
+    var(--color-coral),
+    var(--color-lavender)
+  );
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease-in-out infinite alternate;
+  border: none;
+  color: #1a1a2e;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 16px 48px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 4px 30px rgba(244, 112, 104, 0.3);
+}
+
+.reveal-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 40px rgba(244, 112, 104, 0.5);
+}
+
+.reveal-btn:active {
+  transform: scale(0.97);
+}
+
+/* ---- Greeting (Hi Mom) ---- */
+
+.greeting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  z-index: 1;
+}
+
 .hero-text {
   font-size: clamp(4rem, 12vw, 10rem);
   font-weight: 700;
@@ -57,10 +125,6 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradient-shift 6s ease-in-out infinite alternate;
-  cursor: default;
-  user-select: none;
-  position: relative;
-  z-index: 1;
 }
 
 @keyframes gradient-shift {
@@ -72,7 +136,6 @@
   }
 }
 
-/* Breathing pulse */
 @keyframes breathe {
   0%, 100% {
     transform: scale(1);
@@ -86,7 +149,6 @@
   animation: breathe 4s ease-in-out infinite;
 }
 
-/* Subtitle */
 .subtitle {
   font-size: clamp(1rem, 3vw, 1.5rem);
   color: rgba(255, 255, 255, 0.5);
@@ -94,14 +156,11 @@
   letter-spacing: 4px;
   text-transform: lowercase;
   margin-top: 16px;
-  position: relative;
-  z-index: 1;
 }
 
-/* Click hint */
 .hint {
   position: absolute;
-  bottom: 40px;
+  bottom: -60px;
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.2);
   letter-spacing: 2px;
