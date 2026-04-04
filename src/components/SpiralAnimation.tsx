@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useCallback } from 'react';
+import { useRef, useEffect, useCallback } from 'react';
 
 interface Props {
   speed: 'cinematic' | 'medium' | 'quick';
@@ -110,9 +110,6 @@ function SpiralAnimation({ speed, onComplete }: Props) {
 
       // Draw the spiral stroke by stroke for color/width variation
       for (let i = 0; i < steps - 1; i++) {
-        const tNorm0 = i / (TOTAL_THETA * 40);
-        const tNorm1 = (i + 1) / (TOTAL_THETA * 40);
-
         // theta goes from TOTAL_THETA (outer) down to inner
         const theta0 = TOTAL_THETA - (i / (TOTAL_THETA * 40)) * TOTAL_THETA;
         const theta1 = TOTAL_THETA - ((i + 1) / (TOTAL_THETA * 40)) * TOTAL_THETA;
@@ -172,7 +169,6 @@ function SpiralAnimation({ speed, onComplete }: Props) {
 
           // Chamber line follows a slightly offset spiral
           const rVal = SPIRAL_A * Math.exp(B * theta) * scale * 0.98;
-          const angle = baseAngle + t * 0.15;
           const px = cx + rVal * Math.cos(theta + 0.05);
           const py = cy - rVal * Math.sin(theta + 0.05);
 
