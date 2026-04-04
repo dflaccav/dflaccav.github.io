@@ -1,0 +1,30 @@
+:root {
+  --color-gold: #f6c453;
+  --color-coral: #f47068;
+  --color-lavender: #b794f4;
+  --color-sky: #63b3ed;
+  --color-deep: #1a1a2e;
+  --color-glow: #fefcbf;
+
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100dvh;
+  background: var(--color-deep);
+  overflow: hidden;
+}
+
+#root {
+  min-height: 100dvh;
+}

@@ -1,0 +1,109 @@
+.app {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(
+    ellipse at 50% 40%,
+    #2a1f4e 0%,
+    #1a1a2e 60%,
+    #0f0f1a 100%
+  );
+}
+
+/* Animated gradient orb behind text */
+.glow-orb {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(180, 120, 255, 0.15) 0%,
+    rgba(99, 179, 237, 0.08) 40%,
+    transparent 70%
+  );
+  filter: blur(40px);
+  pointer-events: none;
+  animation: orb-drift 8s ease-in-out infinite alternate;
+}
+
+@keyframes orb-drift {
+  0% {
+    transform: translate(-20px, -10px) scale(1);
+  }
+  100% {
+    transform: translate(20px, 10px) scale(1.1);
+  }
+}
+
+/* Hero text */
+.hero-text {
+  font-size: clamp(4rem, 12vw, 10rem);
+  font-weight: 700;
+  letter-spacing: -2px;
+  background: linear-gradient(
+    135deg,
+    var(--color-gold) 0%,
+    var(--color-coral) 30%,
+    var(--color-lavender) 60%,
+    var(--color-sky) 100%
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 6s ease-in-out infinite alternate;
+  cursor: default;
+  user-select: none;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Breathing pulse */
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+.breathing {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: lowercase;
+  margin-top: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Click hint */
+.hint {
+  position: absolute;
+  bottom: 40px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.2);
+  letter-spacing: 2px;
+  text-transform: lowercase;
+}
